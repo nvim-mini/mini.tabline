@@ -1,10 +1,9 @@
 *mini.tabline* Tabline
-*MiniTabline*
 
 MIT License Copyright (c) 2021 Evgeni Chasnovski
 
-==============================================================================
-
+------------------------------------------------------------------------------
+                                                                   *MiniTabline*
 Key idea: show all listed buffers in readable way with minimal total width.
 
 Features:
@@ -34,8 +33,9 @@ What it doesn't do:
 
 Suggested dependencies (provide extra functionality, will work without them):
 
-- Enabled |MiniIcons| module to show icons near file names.
-  Falls back to using 'nvim-tree/nvim-web-devicons' plugin or shows nothing.
+- Enabled |mini.icons| module to show icons near file names.
+  Falls back to [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+  or shows nothing.
 
 # Setup ~
 
@@ -57,17 +57,17 @@ Some options are set automatically by |MiniTabline.setup()|:
 
 # Highlight groups ~
 
-* `MiniTablineCurrent` - buffer is current (has cursor in it).
-* `MiniTablineVisible` - buffer is visible (displayed in some window).
-* `MiniTablineHidden` - buffer is hidden (not displayed).
-* `MiniTablineModifiedCurrent` - buffer is modified and current.
-* `MiniTablineModifiedVisible` - buffer is modified and visible.
-* `MiniTablineModifiedHidden` - buffer is modified and hidden.
-* `MiniTablineFill` - unused right space of tabline.
-* `MiniTablineTabpagesection` - section with tabpage information.
-* `MiniTablineTrunc` - truncation symbols indicating more left/right tabs.
+- `MiniTablineCurrent` - buffer is current (has cursor in it).
+- `MiniTablineVisible` - buffer is visible (displayed in some window).
+- `MiniTablineHidden` - buffer is hidden (not displayed).
+- `MiniTablineModifiedCurrent` - buffer is modified and current.
+- `MiniTablineModifiedVisible` - buffer is modified and visible.
+- `MiniTablineModifiedHidden` - buffer is modified and hidden.
+- `MiniTablineFill` - unused right space of tabline.
+- `MiniTablineTabpagesection` - section with tabpage information.
+- `MiniTablineTrunc` - truncation symbols indicating more left/right tabs.
 
-To change any highlight group, modify it directly with |:highlight|.
+To change any highlight group, set it directly with |nvim_set_hl()|.
 
 # Disabling ~
 
@@ -94,9 +94,7 @@ Usage ~
 ------------------------------------------------------------------------------
                                                             *MiniTabline.config*
                               `MiniTabline.config`
-Module config
-
-Default values:
+Defaults ~
 >lua
   MiniTabline.config = {
     -- Whether to show file icons (requires 'mini.icons')
@@ -129,7 +127,7 @@ Example of adding "+" suffix for modified buffers: >lua
 ------------------------------------------------------------------------------
                                              *MiniTabline.make_tabline_string()*
                       `MiniTabline.make_tabline_string`()
-Make string for |tabline|
+Make string for |'tabline'|
 
 ------------------------------------------------------------------------------
                                                   *MiniTabline.default_format()*
